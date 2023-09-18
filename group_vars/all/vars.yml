@@ -4,6 +4,7 @@ username: "<username>"
 docker_dir: /home/{{ username }}/docker_apps
 data_dir: /home/{{ username }}/data
 zim_dir: /mnt/media/zim
+jellyfin_dir: /mnt/media/Multimedia
 
 puid: "<puid>"
 
