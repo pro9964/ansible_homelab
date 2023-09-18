@@ -13,32 +13,13 @@
     - name: Deploy docker apps
       ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
       loop:
-        - authelia
-        - traefik
         - code_server
         - dashdot
-        - duplicati
         - filebrowser
         - guacamole
-        - heimdall
-        - homarr
         - jellyfin
-        - jellyseerr
-        - monitoring
-        - n8n
-        - nextcloud
         - portainer
-        - prowlarr
         - qbittorrent
-        - radarr
-        - requestrr
-        - sonarr
-        - syncthing
-        - unmanic
-        - uptime_kuma
-        - vaultwarden
-        - watchtower
-        - wireguard
 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
@@ -46,21 +27,3 @@
     - name: Reboot the server
       ansible.builtin.reboot:
         msg: "Rebooting server to finish setup"
-
-    - name: Check if traefik is working properly with authelia middleware
-      ansible.builtin.uri:
-        url: "https://wg.{{ domain }}"
-      ignore_errors: true
-      register: traefik_authelia_check
-
-    - name: Wait to ensure authelia is up and running
-      ansible.builtin.wait_for:
-        timeout: 10
-      when: traefik_authelia_check.status != 200
-
-    - name: Restart traefik container to ensure it can find authelia middleware
-      community.docker.docker_container:
-        name: traefik
-        state: started
-        restart: true
-      when: traefik_authelia_check.status != 200
