@@ -5,7 +5,7 @@ import subprocess
 
 # Clone the repository
 subprocess.run(
-    ['git', 'clone', 'https://github.com/rishavnandi/ansible_homelab.git'])
+    ['git', 'clone', 'https://github.com/pro9964/ansible_homelab.git'])
 os.chdir('ansible_homelab')
 
 # Read user input
