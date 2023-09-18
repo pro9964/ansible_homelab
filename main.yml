@@ -18,7 +18,7 @@
         - guacamole
         - jellyfin
         - portainer
-        - qbittorrent
+        - kiwix
 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
