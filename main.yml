@@ -14,7 +14,6 @@
       ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
       loop:
         - code_server
-        - dashdot
         - filebrowser
         - guacamole
         - jellyfin
