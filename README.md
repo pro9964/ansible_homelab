@@ -58,6 +58,12 @@ git clone https://github.com/rishavnandi/ansible_homelab.git
 ansible-playbook main.yml
 ```
 
+- to get this to work on my system rather than storing password we could do this way
+  
+```bash
+ansible-playbook main.yml --ask-become-pass
+```
+
 You'll notice that for most apps the ports are not exposed, as I prefer exposing only the neccessary ports and for the rest I add them to a custom Docker network and then use nginx proxy manager to access the apps, a benefit of putting all the containers on a custom Docker network is that you can reference them in nginx proxy manager using their container name instead of the IP address, which makes it easier to manage.
 
 ## Removing unwanted apps
