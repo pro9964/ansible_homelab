@@ -1,0 +1,14 @@
+---
+- name: Create kiwix container
+  community.docker.docker_container:
+    name: kiwix
+    image: ghcr.io/kiwix/kiwix-serve
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    command: '*.zim'
+    volumes:
+      - "{{ docker_dir }}/kiwix/config:/config"
+      - "{{ zim_dir }}:/data/"
+    ports:
+      - 8888:80
