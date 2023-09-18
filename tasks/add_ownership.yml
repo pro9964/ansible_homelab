@@ -13,4 +13,3 @@
     - "{{ docker_dir }}/filebrowser"
     - "{{ docker_dir }}/guacamole"
     - "{{ docker_dir }}/jellyfin"
-    - "{{ docker_dir }}/qbittorrent"
