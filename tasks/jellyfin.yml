@@ -13,7 +13,7 @@
       JELLYFIN_PublishedServerUrl: "{{ ip_address }}"
     volumes:
       - "{{ docker_dir }}/jellyfin/config:/config"
-      - "{{ data_dir }}/media/Multimedia:/data/"
+      - "{{ jellyfin_dir }}:/data/"
     ports:
       - 8096:8096
       - 8920:8920 #optional
