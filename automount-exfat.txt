@@ -1,0 +1,18 @@
+
+sudo apt install exfat-fuse -y
+
+mkdir /mnt/media
+
+sudo blkid
+
+sudo nano /etc/fstab
+
+
+
+for mine specifically
+
+UUID=787A-F656    /mnt/media   exfat   defaults,umask=000,nofail 0 2
+
+Save FSTAB and reboot
+
+ls /mnt/media
