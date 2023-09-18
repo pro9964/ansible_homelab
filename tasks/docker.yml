@@ -67,9 +67,3 @@
     name: docker
     enabled: true
     state: started
-
-- name: Create custom docker network
-  community.docker.docker_network:
-    name: homelab
-    state: present
-    driver: bridge
