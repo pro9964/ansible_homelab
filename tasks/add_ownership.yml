@@ -10,7 +10,6 @@
   loop:
     - "{{ data_dir }}"
     - "{{ docker_dir }}/code_server"
-    - "{{ docker_dir }}/dashdot"
     - "{{ docker_dir }}/filebrowser"
     - "{{ docker_dir }}/guacamole"
     - "{{ docker_dir }}/jellyfin"
