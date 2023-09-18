@@ -18,8 +18,8 @@
       PGID: "{{ pgid }}"
     pull: true
     state: started
-    networks:
-      - name: homelab
+    ports:
+      - 8188:8080
     volumes:
       - "/home/{{ username }}/:/srv"
       - "{{ docker_dir }}/filebrowser/filebrowser.db:/database.db"
