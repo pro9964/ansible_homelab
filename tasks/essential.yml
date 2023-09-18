@@ -84,7 +84,7 @@
     - "{{ docker_dir }}/guacamole"
     - "{{ docker_dir }}/jellyfin"
     - "{{ docker_dir }}/portainer"
-    - "{{ docker_dir }}/qbittorrent"
+    - "{{ docker_dir }}/kiwix"
 
 - name: Suppress login messages
   ansible.builtin.file:
