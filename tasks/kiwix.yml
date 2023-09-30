@@ -9,6 +9,6 @@
     command: '*.zim'
     volumes:
       - "{{ docker_dir }}/kiwix/config:/config"
-      - "{{ zim_dir }}:/data/"
+      - "{{ jellyfin_dir }}/zim:/data/"
     ports:
       - 8888:80
